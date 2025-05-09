@@ -9,7 +9,7 @@ const ProductContextProvider = ({ children }) => {
   const getData = async (searchText = "") => {
     try {
       const { data } = await axios(
-        `https://liza-project-seven.vercel.app/api/data?q=${searchText}`
+        `https://liza-project-seven.vercel.app/api/data`
       );
       return data;
     } catch (error) {
@@ -40,7 +40,7 @@ const ProductContextProvider = ({ children }) => {
 
   const handleSearch = (searchText) => {
     setData(data.filter((item) => item.title.includes(searchText)));
-    fetchData(searchText);
+    // fetchData(searchText);
   };
 
   const value = {
