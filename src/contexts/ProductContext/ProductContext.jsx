@@ -12,7 +12,7 @@ const ProductContextProvider = ({ children }) => {
         `https://liza-project-seven.vercel.app/api/data`
       );
       if (searchText)
-        return data.filter((item) => item.title.includes(searchText));
+        return data.data.filter((item) => item.title.includes(searchText));
       return data;
     } catch (error) {
       console.error("Failed to fetch data:", error);
