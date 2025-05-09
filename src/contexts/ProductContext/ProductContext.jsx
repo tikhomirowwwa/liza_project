@@ -14,7 +14,9 @@ const ProductContextProvider = ({ children }) => {
       if (searchText) {
         console.log(data, data.data);
 
-        return data.data.filter((item) => item.title.includes(searchText));
+        return data.data.filter((item) =>
+          item.title.toLowerCase().includes(searchText.toLowerCase())
+        );
       }
       return data;
     } catch (error) {
