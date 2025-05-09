@@ -25,7 +25,7 @@ const ProductContextProvider = ({ children }) => {
 
     setData(data);
   };
-  console.log(data);
+
   useEffect(() => {
     fetchData();
   }, []);
