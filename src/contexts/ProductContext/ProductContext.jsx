@@ -20,6 +20,7 @@ const ProductContextProvider = ({ children }) => {
 
   const [data, setData] = useState([]);
 
+  console.log("v1");
   const fetchData = async (searchText) => {
     const { data } = await getData(searchText);
 
