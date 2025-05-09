@@ -9,7 +9,7 @@ const ProductContextProvider = ({ children }) => {
   const getData = async (searchText = "") => {
     try {
       const { data } = await axios(
-        `http://localhost:3000/data?q=${searchText}`
+        `https://liza-project-seven.vercel.app/api/data?q=${searchText}`
       );
       return data;
     } catch (error) {
