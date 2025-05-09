@@ -22,6 +22,8 @@ const ProductContextProvider = ({ children }) => {
 
   const fetchData = async (searchText) => {
     const res = await getData(searchText);
+    console.log(res);
+
     setData(res);
   };
   useEffect(() => {
