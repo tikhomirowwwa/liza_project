@@ -40,7 +40,7 @@ const ProductContextProvider = ({ children }) => {
 
   const handleSearch = (searchText) => {
     setData(data.filter((item) => item.title.includes(searchText)));
-    // fetchData(searchText);
+    fetchData(searchText);
   };
 
   const value = {
