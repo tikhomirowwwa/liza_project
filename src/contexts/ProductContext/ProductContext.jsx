@@ -20,7 +20,6 @@ const ProductContextProvider = ({ children }) => {
 
   const [data, setData] = useState([]);
 
-  console.log("v1");
   const fetchData = async (searchText) => {
     const { data } = await getData(searchText);
 
@@ -32,12 +31,16 @@ const ProductContextProvider = ({ children }) => {
   }, []);
 
   const addProduct = async (newProduct) => {
-    await axios.post("http://localhost:3000/data", newProduct);
+    await axios.post(
+      "https://liza-project-seven.vercel.app/api/data",
+      newProduct
+    );
     fetchData();
   };
 
   const handleSearch = (searchText) => {
-    fetchData(searchText);
+    setData(data.filter((item) => item.title.includes(searchText)));
+    // fetchData(searchText);
   };
 
   const value = {
