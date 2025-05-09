@@ -1,0 +1,14 @@
+.product-card {
+  border-radius: 10px;
+  box-shadow: 4px 9px 20px 3px #00000057;
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  &__img {
+    height: 200px;
+    object-fit: contain;
+  }
+}

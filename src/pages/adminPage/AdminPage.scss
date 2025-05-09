@@ -1,0 +1,13 @@
+.admin-page {
+  &__title {
+    width: fit-content;
+    margin: 5% auto;
+  }
+  &__form {
+    width: 70%;
+    margin: 0 auto;
+    padding: 2%;
+    border-radius: 30px;
+    box-shadow: 4px 9px 20px 3px #00000057;
+  }
+}
