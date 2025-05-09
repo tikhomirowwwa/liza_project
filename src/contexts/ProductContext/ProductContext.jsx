@@ -21,11 +21,11 @@ const ProductContextProvider = ({ children }) => {
   const [data, setData] = useState([]);
 
   const fetchData = async (searchText) => {
-    const res = await getData(searchText);
-    console.log(res);
+    const { data } = await getData(searchText);
 
-    setData(res);
+    setData(data);
   };
+  console.log(data);
   useEffect(() => {
     fetchData();
   }, []);
