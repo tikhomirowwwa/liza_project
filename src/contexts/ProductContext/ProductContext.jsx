@@ -11,6 +11,8 @@ const ProductContextProvider = ({ children }) => {
       const { data } = await axios(
         `https://liza-project-seven.vercel.app/api/data`
       );
+      if (searchText)
+        return data.filter((item) => item.title.includes(searchText));
       return data;
     } catch (error) {
       console.error("Failed to fetch data:", error);
@@ -39,8 +41,8 @@ const ProductContextProvider = ({ children }) => {
   };
 
   const handleSearch = (searchText) => {
-    setData(data.filter((item) => item.title.includes(searchText)));
-    // fetchData(searchText);
+    // setData(data.filter((item) => item.title.includes(searchText)));
+    fetchData(searchText);
   };
 
   const value = {
