@@ -14,7 +14,9 @@ export function Header() {
   const { handleSearch } = useProducts();
 
   useEffect(() => {
-    // handleSearch(debounced);
+    if (debounced !== undefined) {
+      handleSearch(debounced);
+    }
   }, [debounced]);
 
   return (
