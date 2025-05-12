@@ -1,10 +1,9 @@
 import axios from "axios";
-import { createContext, useEffect, useState } from "react";
+import { createContext, useState } from "react";
 
 export const ProductContext = createContext();
 
 import React from "react";
-import { useNavigate } from "react-router-dom";
 
 const ProductContextProvider = ({ children }) => {
   const getData = async (searchText = "") => {
@@ -13,8 +12,6 @@ const ProductContextProvider = ({ children }) => {
         `https://liza-project-seven.vercel.app/api/data`
       );
       if (searchText) {
-        console.log(data, data.data);
-
         return data.data.filter((item) =>
           item.title.toLowerCase().includes(searchText.toLowerCase())
         );
@@ -30,13 +27,8 @@ const ProductContextProvider = ({ children }) => {
 
   const fetchData = async (searchText) => {
     const { data } = await getData(searchText);
-
     setData(data);
   };
-
-  useEffect(() => {
-    fetchData();
-  }, []);
 
   const addProduct = async (newProduct) => {
     await axios.post(
@@ -53,6 +45,7 @@ const ProductContextProvider = ({ children }) => {
 
   const value = {
     data,
+    fetchData,
     addProduct,
     handleSearch,
   };
