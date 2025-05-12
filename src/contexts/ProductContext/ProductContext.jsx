@@ -4,6 +4,7 @@ import { createContext, useEffect, useState } from "react";
 export const ProductContext = createContext();
 
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const ProductContextProvider = ({ children }) => {
   const getData = async (searchText = "") => {

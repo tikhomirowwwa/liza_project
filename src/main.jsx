@@ -24,9 +24,6 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")).render(
   <ProductContextProvider>
-    <RouterProvider
-      router={router}
-      // fallbackElement={<BigSpinner />}
-    />
+    <RouterProvider router={router} />
   </ProductContextProvider>
 );

@@ -3,6 +3,7 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { useProducts } from "../../contexts";
 import "./AdminPage.scss";
+import { useNavigate } from "react-router-dom";
 
 export const AdminPage = () => {
   const [product, setProduct] = useState({
@@ -21,6 +22,7 @@ export const AdminPage = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
     await addProduct(product);
+    window.location.href = "/";
   };
 
   return (
