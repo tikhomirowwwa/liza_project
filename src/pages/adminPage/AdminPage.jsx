@@ -18,7 +18,7 @@ export const AdminPage = () => {
     setProduct({ ...product, [target.name]: target.value });
   };
 
-  const onSubmit = async (e) => {
+  const onSubmit = (e) => {
     e.preventDefault();
     addProduct({ ...product, price: parseFloat(product.price) });
     setProduct({
@@ -27,7 +27,6 @@ export const AdminPage = () => {
       price: "",
       image: "",
     });
-    await addProduct(product);
   };
 
   return (
