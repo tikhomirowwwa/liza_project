@@ -22,9 +22,9 @@ export const AdminPage = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
     await addProduct(product);
-    setTimeout(() => {
-      window.location.href = "/";
-    }, 400);
+    // setTimeout(() => {
+    //   //   window.location.href = "/";
+    // }, 400);
   };
 
   return (
