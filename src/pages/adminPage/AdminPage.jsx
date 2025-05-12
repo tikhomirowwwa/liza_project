@@ -31,54 +31,54 @@ export const AdminPage = () => {
 
   return (
     <div className="admin-page">
-      <h1 className="admin-page__title">Create New Product</h1>
+      <h1 className="admin-page__title">Создать новый товар</h1>
       <Form className="admin-page__form" onSubmit={onSubmit}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Title</Form.Label>
+          <Form.Label>Название</Form.Label>
           <Form.Control
             required
             value={product.title}
             onChange={onChange}
             name="title"
             type="text"
-            placeholder="Enter title"
+            placeholder="Введите название"
           />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Description</Form.Label>
+          <Form.Label>Информация</Form.Label>
           <Form.Control
             required
             onChange={onChange}
             value={product.description}
             type="text"
             name="description"
-            placeholder="Enter description"
+            placeholder="Введите информацию"
           />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Price</Form.Label>
+          <Form.Label>Цена</Form.Label>
           <Form.Control
             required
             value={product.price}
             onChange={onChange}
             name="price"
             type="number"
-            placeholder="Enter price"
+            placeholder="Введите цену"
           />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Image URL</Form.Label>
+          <Form.Label>Фото</Form.Label>
           <Form.Control
             required
             value={product.image}
             onChange={onChange}
             name="image"
             type="url"
-            placeholder="Enter image URL"
+            placeholder="Вставьте URL картинки"
           />
         </Form.Group>
         <Button variant="primary" type="submit">
-          Submit
+          Подтвердить
         </Button>
       </Form>
     </div>

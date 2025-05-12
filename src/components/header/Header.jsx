@@ -30,10 +30,10 @@ export function Header() {
               style={{ all: "unset", marginRight: "10px", cursor: "pointer" }}
               to="/"
             >
-              Home
+              Домой
             </Link>
             <Link style={{ all: "unset", cursor: "pointer" }} to="/admin">
-              Admin
+              Админ
             </Link>
           </Nav>
           <Col xs="auto">
@@ -41,7 +41,7 @@ export function Header() {
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               type="text"
-              placeholder="Search"
+              placeholder="Найти"
               className=" mr-sm-2"
             />
           </Col>
