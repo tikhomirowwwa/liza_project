@@ -3,13 +3,12 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { useProducts } from "../../contexts";
 import "./AdminPage.scss";
-import { useNavigate } from "react-router-dom";
 
 export const AdminPage = () => {
   const [product, setProduct] = useState({
     title: "",
     description: "",
-    price: 0,
+    price: "",
     image: "",
   });
 
@@ -21,10 +20,14 @@ export const AdminPage = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
+    addProduct({ ...product, price: parseFloat(product.price) });
+    setProduct({
+      title: "",
+      description: "",
+      price: "",
+      image: "",
+    });
     await addProduct(product);
-    // setTimeout(() => {
-    //   //   window.location.href = "/";
-    // }, 400);
   };
 
   return (

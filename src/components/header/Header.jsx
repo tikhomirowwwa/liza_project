@@ -5,6 +5,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { useDebounce } from "../../hooks";
 import { useProducts } from "../../contexts";
+import { Link } from "react-router-dom";
 
 export function Header() {
   const [search, setSearch] = useState("");
@@ -13,7 +14,7 @@ export function Header() {
   const { handleSearch } = useProducts();
 
   useEffect(() => {
-    handleSearch(debounced);
+    // handleSearch(debounced);
   }, [debounced]);
 
   return (
@@ -23,8 +24,15 @@ export function Header() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/admin">Admin</Nav.Link>
+            <Link
+              style={{ all: "unset", marginRight: "10px", cursor: "pointer" }}
+              to="/"
+            >
+              Home
+            </Link>
+            <Link style={{ all: "unset", cursor: "pointer" }} to="/admin">
+              Admin
+            </Link>
           </Nav>
           <Col xs="auto">
             <Form.Control
